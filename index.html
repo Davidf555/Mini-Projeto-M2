@@ -10,26 +10,48 @@
 </head>
 
 <body>
+    <!-- Parte de cima do site -->
     <header>
         <h1>Bem vindo</h1>
-        <h3>Aqui você gerencia seus computadores:</h3>
+        <h3>Aqui você pode gerencia seus computadores:</h3>
     </header>
-
+    <!-- Vai armazenar todos os cards  -->
     <div>
 
     </div>
-
+    <!-- Botão para adicionar os cards -->
     <div class="btn-conteiner">
-        <button class="btn-adicionar" id=""><strong>Adicionar</strong></button>
+        <button class="btn-adicionar" id="btn-adicionar"><strong>Adicionar</strong></button>
     </div>
+    <!-- Rodape da pagina -->
     <div class="footer-display">
-    <footer>
+        <footer>
             <a>
                 <p>Email:<strong>daviflavio555@gmail.com</strong></p>
                 <p>Telefone:<strong>31 985490228</strong></p>
             </a>
-    </footer>
-</div>
+        </footer>
+    </div>
+
+    <!-- Modals da pagina -->
+    <dialog id="modal-adicionar-card">
+        <form>
+            <div class="modal">
+                <h2>Adicione seu computador:</h2>
+                <label>Tipo de computador:</label>
+                <input type="text">
+                <label> Marca da placa de video:</label>
+                <input type="text">
+                <label> Marca do processador:</label>
+                <input type="text">
+                <label> Quantos anos você tem esse computador?</label>
+                <input type="number">
+                <button class="botao-model" id="fechar-modal">Fechar</button>
+                <button class="botao-model" id="adicionar-a-tela">Adicionar Computador</button>
+            </div>
+        </form>
+    </dialog>
+
     <script src="script.js"></script>
 </body>
 

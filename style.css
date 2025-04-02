@@ -1,13 +1,9 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-body{
-
-}
-
-header{
+header {
     justify-content: center;
     display: flex;
     background-color: rgb(110, 110, 173);
@@ -16,19 +12,19 @@ header{
     align-items: center;
 }
 
-footer{
+footer {
     background-color: rgb(110, 110, 173);
     padding: 10px;
     display: flex;
     justify-content: center;
 }
 
-.btn-conteiner{
+.btn-conteiner {
     display: flex;
     justify-content: center;
 }
 
-.btn-adicionar{
+.btn-adicionar {
     border: none;
     background-color: rgb(143, 143, 226);
     border-radius: 3px;
@@ -36,16 +32,53 @@ footer{
     width: 80px;
     position: absolute;
     bottom: 70px;
+    cursor: pointer;
 }
 
-.btn-adicionar:hover{
+.btn-adicionar:hover {
     background-color: rgb(191, 191, 221);
-    transition: 0.1 ease;
-    box-shadow: 1px 1px 10px white ;
+    box-shadow: 1px 1px 10px rgb(48, 46, 46);
 }
 
-.footer-display{
+.footer-display {
     position: absolute;
-    bottom: 0 ;
+    bottom: 0;
     width: 100%;
+}
+
+#modal-adicionar-card{
+    border: none;
+    border-radius: 8px;
+    width: 300px;
+    padding: 10px;
+}
+.modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+input{
+    width: 300px;
+    height: 30px;
+    font-size: medium;
+}
+
+.botao-model{
+    border: none;
+    width: 120px;
+    background-color: rgb(143, 143, 226);
+    border-radius: 3px;
+}
+
+.botao-model:hover{
+    background-color: rgb(191, 191, 221);
+    box-shadow: 1px 1px 10px rgb(48, 46, 46);
+    cursor: pointer;
+}
+
+dialog{
+    margin-top: 100px;
+    margin-left: 40px;
 }
