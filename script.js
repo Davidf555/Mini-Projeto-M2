@@ -1,6 +1,7 @@
 function abrirModal(){
 const btnAdicionar = document.getElementById("btn-adicionar");
 const dialog = document.getElementById("modal-adicionar-card");
+const fecharModal = document.getElementById("fechar-modal");
 
 
 // Faz aparecer a tela para colocar as imformações ao clicar o botão
@@ -8,7 +9,9 @@ btnAdicionar.addEventListener("click", ()=>{
     dialog.showModal();
 });
 // Faz a tela sumir ao clicar o botão
-
+fecharModal.addEventListener("click", ()=>{
+    dialog.close();
+});
 }
 abrirModal();
 
@@ -40,23 +43,19 @@ meuForm.addEventListener("submit", function postControler(infosDoEvento){
     listaCards.insertAdjacentHTML("afterbegin", `<ul class="listaCards">
         
         <p>Tipo de computador:</p>
-        <p>${inputTipoComputador.value}</p>
+        <p><strong>${inputTipoComputador.value}</strong></p>
         <p>Marca da placa de video:</p>
-        <p>${inputMarcaPlaca.value}</p>
+        <p><strong>${inputMarcaPlaca.value}</strong></p>
         <p>Marca do processador:</p>
-        <p>${inputMarcaProcessador.value}</p>
+        <p><strong>${inputMarcaProcessador.value}</strong></p>
         <p>Quantos anos você tem esse computador:</p>
-        <p>${inputAnosComputador.value}</p>
-
-        <button>Editar</button>
-        <button>Apagar</button>
-        
+        <p>Seu computador tem <strong>${inputAnosComputador.value}</strong> anos</p>
+        <div class="bnt-model-card">
+        <button class="bnt-model">Editar</button>
+        <button class="bnt-model">Apagar</button>
+        </div>
         <ul>`)
     console.log(cardsProducts)
 })
 
-// btnSalvar.addEventListener("click", ()=>{
-//     const card1 = new Card(inputTipoComputador.value,inputMarcaPlaca.value, inputMarcaProcessador.value, inputAnosComputador.value);
-//     cardsProducts.push(card1);
-// });
 

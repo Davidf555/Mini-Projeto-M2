@@ -92,7 +92,7 @@ dialog{
     height: 290px;
     padding: 15px;
     border-radius: 8px;
-    background-color: grey;
+    background-color: rgb(183, 183, 183);
 }
 .armazenarCard{
     display: grid;
@@ -101,4 +101,20 @@ dialog{
     gap: 20px;
     justify-content: center;
     padding: 20px;
+}
+
+.bnt-model-card{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.bnt-model{
+    border: none;
+    width: 80px;
+    height: 30px;
+}
+
+.bnt-model:hover{
+    background-color:rgb(191, 191, 221) ;
 }
