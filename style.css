@@ -82,3 +82,23 @@ dialog{
     margin-top: 100px;
     margin-left: 40px;
 }
+
+.listaCards{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 180px;
+    height: 290px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: grey;
+}
+.armazenarCard{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}

@@ -16,8 +16,10 @@
         <h3>Aqui você pode gerencia seus computadores:</h3>
     </header>
     <!-- Vai armazenar todos os cards  -->
-    <div>
+    <div class="armazenarCard">
+        <ul id="lista-cards">
 
+        </ul>
     </div>
     <!-- Botão para adicionar os cards -->
     <div class="btn-conteiner">
@@ -38,16 +40,21 @@
         <form>
             <div class="modal">
                 <h2>Adicione seu computador:</h2>
+
                 <label>Tipo de computador:</label>
-                <input type="text">
+                <input placeholder="Notebook ou Computador" name="tipo-computador" type="text" id="tipo-computador">
+
                 <label> Marca da placa de video:</label>
-                <input type="text">
+                <input placeholder="Marca do seu processador" name="marca-placa" type="text" id="marca-placa">
+
                 <label> Marca do processador:</label>
-                <input type="text">
+                <input placeholder="Marca da sua placa de video" name="marca-processador" type="text" id="marca-processador">
+
                 <label> Quantos anos você tem esse computador?</label>
-                <input type="number">
-                <button class="botao-model" id="fechar-modal">Fechar</button>
-                <button class="botao-model" id="adicionar-a-tela">Adicionar Computador</button>
+                <input placeholder="Coloque a idade do seu computador" name="anos-computador" type="number" id="anos-computador">
+
+
+                <button class="botao-model" id="salvar">Adicionar Computador</button>
             </div>
         </form>
     </dialog>
