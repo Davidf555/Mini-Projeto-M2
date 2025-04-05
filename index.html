@@ -15,30 +15,9 @@
         <h1>Bem vindo</h1>
         <h3>Aqui você pode gerencia seus computadores:</h3>
     </header>
-    <!-- Vai armazenar todos os cards  -->
-    <div class="armazenarCard">
-        <ul id="lista-cards">
 
-        </ul>
-    </div>
-    <!-- Botão para adicionar os cards -->
-    <div class="btn-conteiner">
-        <button class="btn-adicionar" id="btn-adicionar"><strong>Adicionar</strong></button>
-    </div>
-    <!-- Rodape da pagina -->
-    <div class="footer-display">
-        <footer>
-            <a>
-                <p>Email:<strong>daviflavio555@gmail.com</strong></p>
-                <p>Telefone:<strong>31 985490228</strong></p>
-            </a>
-        </footer>
-    </div>
-
-    <!-- Modals da pagina -->
-    <dialog id="modal-adicionar-card">
         <form>
-            <div class="modal">
+            <div class="divAdicionar">
                 <h2>Adicione seu computador:</h2>
 
                 <label>Tipo de computador:</label>
@@ -53,12 +32,14 @@
                 <label> Quantos anos você tem esse computador?</label>
                 <input placeholder="Coloque a idade do seu computador" name="anos-computador" type="number" id="anos-computador">
 
-                <button class="botao-model" id="fechar-modal">Fechar</button>
-                <button class="botao-model" id="salvar">Adicionar Computador</button>
+                <button class="botao-model" id="adicionar">Adicionar Computador</button>              
             </div>
         </form>
-    </dialog>
 
+            <!-- Vai armazenar todos os cards  -->
+        <ul class="cards" id="lista-cards">
+
+        </ul>
     <script src="script.js"></script>
 </body>
 

@@ -10,13 +10,7 @@ header {
     padding: 8px;
     flex-direction: column;
     align-items: center;
-}
-
-footer {
-    background-color: rgb(110, 110, 173);
-    padding: 10px;
-    display: flex;
-    justify-content: center;
+    font-size: 20px;
 }
 
 .btn-conteiner {
@@ -24,63 +18,19 @@ footer {
     justify-content: center;
 }
 
-.btn-adicionar {
-    border: none;
-    background-color: rgb(143, 143, 226);
-    border-radius: 3px;
-    height: 30px;
-    width: 80px;
-    position: absolute;
-    bottom: 70px;
-    cursor: pointer;
-}
-
-.btn-adicionar:hover {
-    background-color: rgb(191, 191, 221);
-    box-shadow: 1px 1px 10px rgb(48, 46, 46);
-}
-
-.footer-display {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
-#modal-adicionar-card{
-    border: none;
-    border-radius: 8px;
-    width: 300px;
-    padding: 10px;
-}
-.modal{
+.divAdicionar{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 10px;
+    padding: 10px;
+    border: solid black;
 }
 input{
     width: 300px;
     height: 30px;
     font-size: medium;
-}
-
-.botao-model{
-    border: none;
-    width: 120px;
-    background-color: rgb(143, 143, 226);
-    border-radius: 3px;
-}
-
-.botao-model:hover{
-    background-color: rgb(191, 191, 221);
-    box-shadow: 1px 1px 10px rgb(48, 46, 46);
-    cursor: pointer;
-}
-
-dialog{
-    margin-top: 100px;
-    margin-left: 40px;
 }
 
 .listaCards{
@@ -94,27 +44,12 @@ dialog{
     border-radius: 8px;
     background-color: rgb(183, 183, 183);
 }
-.armazenarCard{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, auto);
-    gap: 20px;
-    justify-content: center;
-    padding: 20px;
-}
 
-.bnt-model-card{
+.cards{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 10px;
-}
-
-.bnt-model{
-    border: none;
-    width: 80px;
-    height: 30px;
-}
-
-.bnt-model:hover{
-    background-color:rgb(191, 191, 221) ;
+    padding: 10px;
+    font-size: 20px;
 }

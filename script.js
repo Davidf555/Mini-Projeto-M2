@@ -1,61 +1,91 @@
-function abrirModal(){
-const btnAdicionar = document.getElementById("btn-adicionar");
-const dialog = document.getElementById("modal-adicionar-card");
-const fecharModal = document.getElementById("fechar-modal");
-
-
-// Faz aparecer a tela para colocar as imformações ao clicar o botão
-btnAdicionar.addEventListener("click", ()=>{
-    dialog.showModal();
-});
-// Faz a tela sumir ao clicar o botão
-fecharModal.addEventListener("click", ()=>{
-    dialog.close();
-});
-}
-abrirModal();
-
 const inputTipoComputador = document.getElementById("tipo-computador");
 const inputMarcaPlaca = document.getElementById("marca-placa");
 const inputMarcaProcessador = document.getElementById("marca-processador");
 const inputAnosComputador = document.getElementById("anos-computador");
-const btnSalvar = document.getElementById("salvar");
+const btnSalvar = document.getElementById("adicionar");
 
 let cardsProducts = [];
+
 class Card {
-    constructor(inputTipoComputador, inputMarcaProcessador, inputMarcaPlaca, inputAnosComputador){
-        this.inputTipoComputador = inputTipoComputador;
-        this.inputMarcaPlaca = inputMarcaPlaca;
-        this.inputMarcaProcessador = inputMarcaProcessador;
-        this.inputAnosComputador = inputAnosComputador;
+    constructor(tipo, placa, processador, anos) {
+        this.tipo = tipo;
+        this.placa = placa;
+        this.processador = processador;
+        this.anos = anos;
     }
 }
 
-const meuForm = document.querySelector("form");
-meuForm.addEventListener("submit", function postControler(infosDoEvento){
-    infosDoEvento.preventDefault();
-    console.log("novo card")
+const listaCards = document.getElementById("lista-cards");
 
-    const card1 = new Card(inputTipoComputador.value,inputMarcaPlaca.value, inputMarcaProcessador.value, inputAnosComputador.value);
-    cardsProducts.push(card1);
+function cardComputador() {
+    listaCards.innerHTML = "";
 
-    const listaCards = document.getElementById("lista-cards");
-    listaCards.insertAdjacentHTML("afterbegin", `<ul class="listaCards">
+    cardsProducts.forEach((computador, index) => {
+        const div = document.createElement("div");
+        div.className = "listaCards";
+
+        const nomeTipo = document.createElement("p");
+        nomeTipo.innerText = `Tipo: ${computador.tipo}`;
+
+        const nomeMarcaPlaca = document.createElement("p");
+        nomeMarcaPlaca.innerText = `Placa: ${computador.placa}`;
+
+        const nomeProcessador = document.createElement("p");
+        nomeProcessador.innerText = `Processador: ${computador.processador}`;
         
-        <p>Tipo de computador:</p>
-        <p><strong>${inputTipoComputador.value}</strong></p>
-        <p>Marca da placa de video:</p>
-        <p><strong>${inputMarcaPlaca.value}</strong></p>
-        <p>Marca do processador:</p>
-        <p><strong>${inputMarcaProcessador.value}</strong></p>
-        <p>Quantos anos você tem esse computador:</p>
-        <p>Seu computador tem <strong>${inputAnosComputador.value}</strong> anos</p>
-        <div class="bnt-model-card">
-        <button class="bnt-model">Editar</button>
-        <button class="bnt-model">Apagar</button>
-        </div>
-        <ul>`)
-    console.log(cardsProducts)
-})
+        const anosComputador = document.createElement("p");
+        anosComputador.innerText = `Anos: ${computador.anos}`;
 
+        const btnEditar = document.createElement("button");
+        btnEditar.innerText = "Alterar";
+        btnEditar.onclick = () => editarComputador(index);
 
+        const btnExcluir = document.createElement("button");
+        btnExcluir.innerText = "Excluir";
+        btnExcluir.onclick = () => excluirComputador(index);
+
+        div.appendChild(nomeTipo);
+        div.appendChild(nomeMarcaPlaca);
+        div.appendChild(nomeProcessador);
+        div.appendChild(anosComputador);
+        div.appendChild(btnEditar);
+        div.appendChild(btnExcluir);
+
+        listaCards.appendChild(div);
+    });
+}
+
+function editarComputador(index) {
+    const computador = cardsProducts[index];
+    inputTipoComputador.value = computador.tipo;
+    inputMarcaPlaca.value = computador.placa;
+    inputMarcaProcessador.value = computador.processador;
+    inputAnosComputador.value = computador.anos;
+
+    excluirComputador(index);
+}
+
+function excluirComputador(index) {
+    cardsProducts.splice(index, 1);
+    cardComputador();
+}
+
+// Evento de adicionar computador
+btnSalvar.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const tipo = inputTipoComputador.value.trim();
+    const placa = inputMarcaPlaca.value.trim();
+    const processador = inputMarcaProcessador.value.trim();
+    const anos = inputAnosComputador.value.trim();
+
+    const novoCard = new Card(tipo, placa, processador, anos);
+    cardsProducts.push(novoCard);
+    cardComputador();
+
+    // Limpar campos
+    inputTipoComputador.value = "";
+    inputMarcaPlaca.value = "";
+    inputMarcaProcessador.value = "";
+    inputAnosComputador.value = "";
+});
