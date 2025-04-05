@@ -28,8 +28,8 @@ header {
     border: solid black;
 }
 input{
-    width: 300px;
-    height: 30px;
+    width: 350px;
+    height: 40px;
     font-size: medium;
 }
 
@@ -53,3 +53,44 @@ input{
     padding: 10px;
     font-size: 20px;
 }
+
+label{
+    font-size: 20px;
+}
+
+.botaoCard{
+    font-size: 15px;
+    border: none;
+    width: 70px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+.botaoCard:hover{
+    background-color: rgb(148, 148, 177);
+}
+
+.divBotaoCard{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.botaoAdicionar{
+    font-size: 15px;
+    border: none;
+    width: 130px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.botaoAdicionar:hover{
+    background-color: rgb(148, 148, 177);
+}
+
+.h2{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+

@@ -16,13 +16,16 @@ class Card {
 }
 
 const listaCards = document.getElementById("lista-cards");
-
+// Faz os cards
 function cardComputador() {
     listaCards.innerHTML = "";
 
     cardsProducts.forEach((computador, index) => {
         const div = document.createElement("div");
         div.className = "listaCards";
+
+        const divBotaoCard = document.createElement("div")
+        divBotaoCard.className = "divBotaoCard";
 
         const nomeTipo = document.createElement("p");
         nomeTipo.innerText = `Tipo: ${computador.tipo}`;
@@ -34,14 +37,16 @@ function cardComputador() {
         nomeProcessador.innerText = `Processador: ${computador.processador}`;
         
         const anosComputador = document.createElement("p");
-        anosComputador.innerText = `Anos: ${computador.anos}`;
+        anosComputador.innerText = `A ${computador.anos} anos`;
 
         const btnEditar = document.createElement("button");
         btnEditar.innerText = "Alterar";
+        btnEditar.className = "botaoCard";
         btnEditar.onclick = () => editarComputador(index);
 
         const btnExcluir = document.createElement("button");
         btnExcluir.innerText = "Excluir";
+        btnExcluir.className = "botaoCard";
         btnExcluir.onclick = () => excluirComputador(index);
 
         div.appendChild(nomeTipo);
@@ -50,11 +55,14 @@ function cardComputador() {
         div.appendChild(anosComputador);
         div.appendChild(btnEditar);
         div.appendChild(btnExcluir);
+        div.appendChild(divBotaoCard);
+        divBotaoCard.appendChild(btnEditar);
+        divBotaoCard.appendChild(btnExcluir);
 
         listaCards.appendChild(div);
     });
 }
-
+// Função de editar card
 function editarComputador(index) {
     const computador = cardsProducts[index];
     inputTipoComputador.value = computador.tipo;
